@@ -1,0 +1,92 @@
+@Repuestos_API_HostAddress = https://localhost:7123
+
+### Crear una marca
+POST {{Repuestos_API_HostAddress}}/api/Marcas
+Content-Type: application/json
+
+{
+  "nombre": "Toyota"
+}
+
+### Consultar todas las marcas
+GET {{Repuestos_API_HostAddress}}/api/Marcas
+Accept: application/json
+
+###
+
+### Crear un repuesto
+POST {{Repuestos_API_HostAddress}}/api/Repuestos
+Content-Type: application/json
+
+{
+  "codigo": "REP-001",
+  "nombre": "Filtro de aceite",
+  "precio": 450.00,
+  "cantidad": 10,
+  "marcaId": 1
+}
+
+### Consultar todos los repuestos
+GET {{Repuestos_API_HostAddress}}/api/Repuestos
+Accept: application/json
+
+###
+
+### Actualizar el repuesto 1
+PUT {{Repuestos_API_HostAddress}}/api/Repuestos/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "codigo": "REP-001",
+  "nombre": "Filtro de aceite",
+  "precio": 500.00,
+  "cantidad": 15,
+  "marcaId": 1
+}
+
+### Consultar el repuesto 1
+GET {{Repuestos_API_HostAddress}}/api/Repuestos/1
+Accept: application/json
+
+###
+
+  ### Actualizar la marca 1
+PUT {{Repuestos_API_HostAddress}}/api/Marcas/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nombre": "Toyota Original"
+}
+
+### Consultar la marca 1
+GET {{Repuestos_API_HostAddress}}/api/Marcas/1
+Accept: application/json
+
+###
+
+  ### Intentar eliminar una marca con repuestos
+DELETE {{Repuestos_API_HostAddress}}/api/Marcas/1
+
+### Eliminar el repuesto de prueba
+DELETE {{Repuestos_API_HostAddress}}/api/Repuestos/1
+
+### Comprobar que el repuesto ya no existe
+GET {{Repuestos_API_HostAddress}}/api/Repuestos/1
+
+### Eliminar la marca de prueba
+DELETE {{Repuestos_API_HostAddress}}/api/Marcas/1
+
+### Comprobar que la marca ya no existe
+GET {{Repuestos_API_HostAddress}}/api/Marcas/1
+
+###
+
+### Consultar marcas restantes
+GET {{Repuestos_API_HostAddress}}/api/Marcas
+
+### Consultar repuestos restantes
+GET {{Repuestos_API_HostAddress}}/api/Repuestos
+
+###
